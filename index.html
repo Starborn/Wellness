@@ -3,75 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nature Therapy | Forest & Ocean Immersion</title>
+    <title>Nature Therapy | The Unity Method & Offerings</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --forest-green: #2d4c3e;
             --ocean-blue: #3e5c76;
             --sand-beige: #f4f1de;
-            --text-dark: #1a1a1a;
+            --deep-wood: #1b2e26;
+            --text-dark: #2c2c2c;
             --white: #ffffff;
+            --accent-gold: #c5a16f;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: var(--text-dark);
             background-color: var(--white);
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--forest-green); }
 
-        /* Navigation */
         nav {
-            padding: 1.5rem 10%;
+            padding: 1rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            color: var(--forest-green);
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .logo { font-size: 1.5rem; color: var(--forest-green); text-decoration: none; font-weight: bold; }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
 
-        .nav-links a:hover {
-            color: var(--ocean-blue);
-        }
+        .nav-links a:hover { color: var(--ocean-blue); }
 
-        /* Hero Section */
         header {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), 
                         url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
@@ -84,123 +62,229 @@
             padding: 0 20px;
         }
 
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
+        header h1 { color: var(--white); font-size: 3.5rem; margin-bottom: 1rem; }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             background-color: var(--forest-green);
             color: var(--white);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             margin-top: 2rem;
-            transition: background 0.3s;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
         }
 
-        .btn:hover {
-            background-color: var(--ocean-blue);
-        }
+        .btn:hover { background-color: var(--ocean-blue); transform: scale(1.05); }
 
-        /* Therapy Sections */
-        .container {
-            padding: 5rem 10%;
-        }
+        .container { padding: 5rem 10%; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
         .card {
+            padding: 2.5rem;
+            border-radius: 15px;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        /* Other Bookings Section */
+        .offerings-section { background-color: #f0f4f2; padding: 5rem 10%; }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .offering-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-bottom: 4px solid var(--accent-gold);
+            border-radius: 8px;
+        }
+
+        .offering-item h4 { color: var(--ocean-blue); margin-bottom: 0.5rem; }
+
+        /* Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #fff;
             padding: 2rem;
-            border-radius: 10px;
-            background: var(--sand-beige);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
-        .card:hover {
-            transform: translateY(-10px);
+        .form-row { display: flex; gap: 1rem; }
+
+        input, textarea, select {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            width: 100%;
         }
 
-        .card h3 {
-            margin-bottom: 1rem;
-            color: var(--forest-green);
+        .form-note { font-size: 0.85rem; color: #666; font-style: italic; text-align: center; margin-top: 1rem; }
+
+        button {
+            padding: 1rem;
+            background: var(--forest-green);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--forest-green);
-            color: var(--white);
-            padding: 3rem 10%;
-            text-align: center;
-        }
+        button:hover { background: var(--ocean-blue); }
+
+        footer { background: var(--deep-wood); color: var(--white); padding: 4rem 10%; text-align: center; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+            .form-row { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">NatureTherapy</a>
+        <a href="#" class="logo">Unity Nature Therapy</a>
         <ul class="nav-links">
+            <li><a href="#method">Method</a></li>
+            <li><a href="#offerings">Offerings</a></li>
             <li><a href="#forest">Forest</a></li>
             <li><a href="#ocean">Ocean</a></li>
-            <li><a href="#science">Science</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Book Now</a></li>
         </ul>
     </nav>
 
     <header>
-        <h1>Reconnect with the Elements</h1>
-        <p>Evidence-based Forest and Ocean therapy for the modern soul.</p>
-        <a href="#forest" class="btn">Explore Activities</a>
+        <h1>Regain Unity with Nature</h1>
+        <p>Evidence-based restoration through the Unity Method.</p>
+        <a href="#contact" class="btn">Inquire About Sessions</a>
     </header>
 
+    <!-- Unity Method Section (Previous Content Kept) -->
+    <section id="method" class="container" style="background: var(--sand-beige);">
+        <div class="section-title">
+            <h2>The Unity Method</h2>
+            <p>Dissolving the mental habits of separation via Non-Dual traditions.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Integrative Wisdom</h3>
+                <p>Synthesis of Yoga, Qi Gong, Tai Chi, and Psychotherapy to reset the nervous system.</p>
+            </div>
+            <div class="card">
+                <h3>Awareness Traditions</h3>
+                <p>Guided by Dzogchen and Mahamudra to release conceptual filters and return to natural presence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Offerings Section -->
+    <section id="offerings" class="offerings-section">
+        <div class="section-title">
+            <h2>Other Bookings</h2>
+            <p>Specialized paths to mental and physical wellness.</p>
+        </div>
+        <div class="offerings-grid">
+            <div class="offering-item">
+                <h4>Conversational Wellness</h4>
+                <p>Dialectic exploration to unravel stress and clarify mental intent.</p>
+            </div>
+            <div class="offering-item">
+                <h4>Slow Yoga</h4>
+                <p>Targeted movement for mental wellness and deep somatic release.</p>
+            </div>
+            <div class="offering-item">
+                <h4>Natural Appreciation</h4>
+                <p>Guided walks focused on biodiversity and the aesthetic of the wild.</p>
+            </div>
+            <div class="offering-item">
+                <h4>Natural Art Sessions</h4>
+                <p>Creative expression using gathered elements from the earth.</p>
+            </div>
+            <div class="offering-item">
+                <h4>Weekend Qi Gong & Tai Chi</h4>
+                <p>Rhythmic energy work to synchronize with the weekend's natural pace.</p>
+            </div>
+            <div class="offering-item">
+                <h4>Food Workshops</h4>
+                <p>Learning the nutritional and medicinal gifts of the forest and sea.</p>
+            </div>
+            <div class="offering-item">
+                <h4>Mixed Experiences</h4>
+                <p>Personalized, integrated life-enhancing journeys designed on request.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forest & Ocean Sections (Summary) -->
     <section id="forest" class="container">
-        <h2>Forest Therapy (Shinrin-Yoku)</h2>
-        <p style="margin-bottom: 2rem;">Harness the power of phytoncides and sensory immersion in woodland environments.</p>
+        <div class="section-title">
+            <h2>Forest & Ocean Immersion</h2>
+        </div>
         <div class="grid">
             <div class="card">
-                <h3>Sensory Grounding</h3>
-                <p>Focus on the texture of bark, the scent of damp earth, and the fractal patterns of canopy light.</p>
+                <h3>Shinrin-Yoku</h3>
+                <p>Phytoncide-rich forest bathing for immune support and grounding.</p>
             </div>
             <div class="card">
-                <h3>Guided Stillness</h3>
-                <p>Learn the art of non-striving. Sit in a designated 'spot' for 20 minutes to observe the forest's rhythm.</p>
+                <h3>Blue Health</h3>
+                <p>Tidal synchronization and mineral detoxification via coastal therapy.</p>
             </div>
         </div>
     </section>
 
-    <section id="ocean" class="container" style="background-color: #f9f9f9;">
-        <h2>Ocean Therapy (Blue Health)</h2>
-        <p style="margin-bottom: 2rem;">Utilizing the rhythmic soundscapes and negative ions of coastal regions.</p>
-        <div class="grid">
-            <div class="card" style="background: #e1eaf0;">
-                <h3>Blue Mind Meditation</h3>
-                <p>Synchronize your breath with the tidal intervals to lower heart rate and cortisol levels.</p>
-            </div>
-            <div class="card" style="background: #e1eaf0;">
-                <h3>Coastal Foraging</h3>
-                <p>A tactile engagement with the shoreline to foster environmental connection and presence.</p>
-            </div>
+    <!-- Enhanced Contact Form -->
+    <section id="contact" class="container" style="background: #f9f9f9;">
+        <div class="section-title">
+            <h2>Start Your Journey</h2>
+            <p>Request a personalized session with Paola.</p>
         </div>
-    </section>
+        
+        <form action="https://formspree.io/f/paola.dimaio@gmail.com" method="POST" class="contact-form">
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+            </div>
+            
+            <select name="session_type" required>
+                <option value="" disabled selected>Select an Interest</option>
+                <option value="Forest/Ocean Therapy">Forest or Ocean Therapy</option>
+                <option value="Conversational Wellness">Conversational Wellness</option>
+                <option value="Slow Yoga">Slow Yoga for Mental Wellness</option>
+                <option value="Natural Art/Walks">Natural Art or Appreciation Walks</option>
+                <option value="Weekend Tai Chi/Qi Gong">Weekend Tai Chi or Qi Gong</option>
+                <option value="Food Workshop">Food Workshop</option>
+                <option value="Personalized Experience">Mixed Life Enhancing Experience (Custom)</option>
+            </select>
 
-    <section id="science" class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <h2>The Science of Nature</h2>
-            <p>Research indicates that as little as 120 minutes a week in green or blue spaces significantly boosts mental well-being, improves immune function, and reduces blood pressure.</p>
-        </div>
+            <input type="text" name="requested_timing" placeholder="Preferred Date/Duration (e.g., Saturday Morning, 2 Hours)">
+            
+            <textarea name="message" rows="4" placeholder="Tell us about your goals or any specific requirements..."></textarea>
+            
+            <button type="submit">Inquire About Booking</button>
+            <p class="form-note">* Note: Time, date, and duration of each session are agreed upon demand.</p>
+        </form>
     </section>
 
     <footer>
-        <p>&copy; 2026 Nature Therapy Initiative. All Rights Reserved.</p>
+        <p>&copy; 2026 Unity Nature Therapy | Paola Di Maio</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Integrating Forest & Ocean Wisdom with Ancient Mind Traditions.</p>
     </footer>
 
 </body>
